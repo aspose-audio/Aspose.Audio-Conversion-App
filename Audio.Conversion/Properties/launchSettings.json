@@ -1,0 +1,51 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false, 
+    "anonymousAuthentication": true, 
+    "iisExpress": {
+      "applicationUrl": "http://localhost:24625",
+      "sslPort": 44336
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Audio.Conversion": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "TempRootDirectory": "C:\\storage\\",
+        "FontRootDirectory": "/Fonts",
+        "ForumKey": "xxxx",
+        "ForumUrl": "https://forum-qa.aspose.com/port/import.json",
+        "ForumCategoryId": "15",
+        "AwsAccessKey": "xxxx",
+        "AwsSecretKey": "xxxx",
+        "S3Region": "xxxx",
+        "S3BucketName": "xxxx",
+        "MailServerUserId": "xxxx@xxxx.xxxx",
+        "MailServerUserPassword": "xxxx",
+        "ElasticApm__ServerUrls": "xxxx",
+        "ElasticApm__SecretToken": "xxxx",
+        "ElasticApm__VerifyServerCert": "false",
+        "ElasticApm__ServiceName": "xxxx",
+        "ElasticApm__GlobalLabels": "xxxx",
+        "ElasticApm__CaptureBody": "errors",
+        "ELASTIC_APM_CLOUD_PROVIDER": "none",
+        "EsUrl": "xxxx",
+        "EsLogin": "xxxx",
+        "EsPassword": "xxxx",
+        "RedisKey": "AudioApp_",
+        "RedisConnectionString": "xxxx",
+        "FFmpegPath": "xxxx"
+      }
+    }
+  }
+}

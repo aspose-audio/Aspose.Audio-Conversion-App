@@ -1,0 +1,21 @@
+﻿@model AudioVedio.Pages.Models.AppModel
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@{
+    ViewBag.Title = Model.PageTitle;
+    ViewBag.MetaDescription = Model.PageMetaDescription;
+    ViewBag.JsonLd = Model.StructuralDataJson;
+}
+@Html.PartialAsync("Main").Result
+
+@section scripts {
+
+    <script type="text/javascript">
+        var o = @Html.Raw(Model.JSOptions);
+        $.extend(o, {
+            Method: requestConversion,
+        });
+    </script>
+}

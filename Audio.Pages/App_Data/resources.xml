@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <res name="ConversionFeatureTitle">{0} to {1}</res>
+  <res name="FileConvertedSuccessMessage">Your file has been converted successfully, please check your email to download converted file</res>
+  <res name="btnConvertNow">CONVERT NOW</res>
+  <res name="SaveAs">Save as</res>
+  <res name="DropOrUploadFile">Drop or upload your file</res>
+  <res name="DropOrUploadFiles">Drop or upload your files</res>
+  <res name="DropOrUploadImageFile">Drop or upload your image</res>
+  <res name="FileConvertedSuccessMessage1">Your file has been converted successfully</res>
+  <res name="DownLoadNow">DOWNLOAD NOW</res>
+  <res name="ViewNow">VIEW NOW</res>
+  <res name="FileWrongTypeMessage">You are trying to upload document(s) of unsupported type: </res>
+  <res name="FileWrongTypeMessage2">Please, use our full version of {0} for uploading this type of document(s): </res>
+  <res name="SendDownloadLink">Send the download link to</res>
+  <res name="SendToEmail">Send to email</res>
+  <res name="EmailTitle">Download File</res>
+  <res name="EmailAddress">email address</res> 
+  <res name="Send">Send</res>
+  <res name="OtherAppsTitle">Work with your documents in other free apps</res>
+  <res name="FeedbackSend">Send feedback</res>
+  <res name="FeedbackSuccess">Your feedback is sent successfully</res>
+  <res name="FeedbackLengthError">Feedback text message should be less than 1000 symbols</res>
+  <res name="ShareFacebook">Share on Facebook</res>
+  <res name="ShareTwitter">Share on Twitter</res>
+  <res name="ShareLinkedIn">Share on LinkedIn</res>
+  <res name="BookmarkApp">Bookmark this app</res>
+  <res name="BookmarkTextDownload">
+    Press <strong>Ctrl + D</strong> to store it in your bookmarks in order not to search it again
+  </res>
+  <res name="LeaveFeedback">Leave a feedback</res>
+  <res name="TryCloudAPI">Try our Cloud API</res>
+  <res name="BookmarkText">
+    Press <strong>Ctrl + D</strong> to add this page to your favorites or <strong>Esc</strong> to cancel the action.
+  </res>
+  <res name="GitHub">See source code</res>
+  <res name="FeedbackHeader">Send us your feedback</res>
+  <res name="FeedbackPlaceholder">Write here your opinion, suggestions, etc.</res>
+  <res name="FeedbackMaximumSize">1000 characters maximum</res>
+  <res name="SeeOtherApps">See other apps</res>
+
+  <res name="Save">Save</res>
+  <res name="Cancel">Cancel</res>
+  <res name="Document">visio</res>
+  <res name="DropAFile">Drop or upload your file</res>
+  <res name="UploadAnother">Upload another file</res>
+  <res name="SendTo">Send the download link to</res>
+  
+  <res name="PoweredBy">Powered by</res>
+  <res name="Feature3Description">, which are being used by many Fortune 100 companies across 114 countries</res>
+  <res name="NoSearchResultsMessage">No search results</res>
+  <res name="WrongRegExpMessage">Wrong regular expression</res>
+  <res name="SearchQueryErrorMessage">Search query can&apos;t be empty</res>
+
+  <res name="ValidationExpression">.vsd|.vsdx|.vsx|.vtx|.vdx|.vssx|.vstx|.vsdm|.vssm|.vstm</res>
+  <res name="ConversionButtonText">CONVERT</res>
+  <res name="ConversionSuccessMessage">Your files have been processed successfully</res>
+  <res name="ConversionSentEmailSuccessMessage">Your file(s) has been converted successfully, please check your email to download converted file(s)</res>
+  <res name="ConversionViewerButtonText">VIEW RESULTS</res>
+  <res name="ConversionAction">Convert</res>
+  <res name="FileSelectMessage">Please select a file to upload</res>
+
+ 
+  <res name="FileAmountMessageLessTen">Please select less than ten files</res>
+  <res name="FileAmountMessageOne">Please select only one file</res>
+  
+  <!-- ============================================ Diagram APP ============================================ -->
+
+  <res name="ConversionPageTitle">Convert Audio file Online App - Free Online Audio file Converter</res>
+  <res name="ConversionTitle">Free Online Audio file Converter</res>
+  <res name="ConversionMetaDescription">Free Online Convert any audio or video files to AAC, AIFF, FLAC, M4A, MP3, WAV, WMA, AC3, CAF, OGG and more.</res>
+  <res name="ConversionTitleSub">Convert audio files, support AAC, AIFF, FLAC, M4A, MP3, WAV, WMA, AC3, CAF, OGG audio format.</res>
+  <res name="ConversionLiFeature1">Supported Documents: any audio or video file</res>
+  <res name="ConversionLiFeature2">Convert to: AAC, AIFF, FLAC, M4A, MP3, WAV, WMA, AC3, CAF, OGG</res>
+  <res name="ConversionSaveAsOptions">PDF, HTML, JPG, PNG, SVG, BMP, TIFF, XPS, GIF, EMF, VSDX, VSX, VTX, VDX, VSSX, VSTX, VSDM, VSSM, VSTM, PPTX, DOCX</res>
+  <res name="ConversionFeature1">Fast and Easy Conversion</res>
+  <res name="ConversionFeature1Description">Upload your document, choose the save format type and click on “Convert” button. You will get the download link as soon as the file is converted</res>
+  <res name="ConversionFeature2">Convert from Anywhere</res>
+  <res name="ConversionFeature2Description">It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our servers. No plugin or software installation required for you</res>
+  <res name="ConversionFeature3">Conversion Quality</res>
+  <res name="ConversionAnotherFile">Convert other files</res>
+
+  <res name="ConversionTitle2">Free online {0} to {1} converter</res>
+  <res name="ConversionTitleSub2">Convert {0} to {1} online from any device, with a modern browser like Chrome, Opera and Firefox.</res>
+
+  <res name="ConversionPageTitle2">Convert {0} To {1} Online Free App - {0} To {1} converter</res>
+  <res name="ConversionMetaDescription2">Free online {0} to {1} converter. Convert visio files online free.</res>
+ 
+
+  <!-- Conversion App - How To-->
+  <res name="ConversionHowtoTitle">How to convert {0} files</res>
+  <res name="ConversionHowtoFeature1">Click inside the file drop area to upload a {0} file or drag &amp; drop a {0} file.</res>
+  <res name="ConversionHowtoFeature2">Your {0} file will be uploaded and will be converted to other format.</res>
+  <res name="ConversionHowtoFeature3">Download link of result file will be available instantly after conversion.</res>
+  <res name="ConversionHowtoFeature4">You can also send a link to the {0} file to your email address.</res>
+  <res name="ConversionHowtoFeature5">Note that file will be deleted from our servers after 24 hours and download links will stop working after this time period.</res>
+
+  <res name="ConversionHowtoNameFeature1">Upload file</res>
+  <res name="ConversionHowtoNameFeature2">Click Convert</res>
+  <res name="ConversionHowtoNameFeature3">Download</res>
+  <res name="ConversionHowtoNameFeature4">Send Email</res>
+  <res name="ConversionHowtoNameFeature5">Note</res>
+
+  <res name="ConversionHowtoUrlPathFeature1">https://products.aspose.app/diagram/conversion</res>
+  <res name="ConversionHowtoUrlPathFeature2">https://products.aspose.app/diagram/conversion</res>
+  <res name="ConversionHowtoUrlPathFeature3">https://products.aspose.app/diagram/conversion</res>
+  <res name="ConversionHowtoUrlPathFeature4">https://products.aspose.app/diagram/conversion</res>
+  <res name="ConversionHowtoUrlPathFeature5">https://products.aspose.app/diagram/conversion</res>
+
+  <res name="ConversionHowtoImageUrlFeature1">https://products.aspose.app/diagram/img/howto/-step1.png</res>
+  <res name="ConversionHowtoImageUrlFeature2">https://products.aspose.app/diagram/img/howto/-step2.png</res>
+  <res name="ConversionHowtoImageUrlFeature3">https://products.aspose.app/diagram/img/howto/-step3.png</res>
+  <res name="ConversionHowtoImageUrlFeature4">https://products.aspose.app/diagram/img/howto/-step.png</res>
+  <res name="ConversionHowtoImageUrlFeature5">https://products.aspose.app/diagram/img/howto/-step.png</res>
+  
+  
+
+  <res name="ConversionBreadcrumb">{0} to {1}</res>
+
+
+  <res name="ConversionRawHtmlOverview">Aspose &lt;strong&gt;{0} converter&lt;/strong&gt; is a free app to convert {0} format. Convert {0} online from Mac OS, Linux, Android, IOS, and anywhere.</res>
+ 
+  <res name="ConversionOtherFeaturesTitle">Other Supported Conversions</res>
+  <res name="ConversionOtherFeaturesTitleSub">You can also convert other file formats. Please see the list below.</res>
+
+  <res name="ConversionDesc">Convert your audio or video files to AAC, AIFF, FLAC, M4A, MP3, WAV, WMA, AC3, CAF, OGG and other formats</res>
+
+  <!-- ============================================ Diagram APP END ============================================ -->
+</resources>
+
+
+

@@ -1,0 +1,91 @@
+﻿@model AudioVedio.Pages.Models.AppModel
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="@ViewBag.MetaDescription" />
+    <meta name="theme-color" content="#3C7DE7" />
+    <link href="~/audio/@Model.AppRoute/content/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <!-- Bootstrap & Font CSS -->
+    <link rel="stylesheet" href="https://cms.dynabic.com/templates/aspose/css/bootstrap.css?v=331" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css" />
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/audio/@Model.AppRoute/content/css/error404.css" type="text/css" />
+    <link rel="stylesheet" href="/audio/@Model.AppRoute/content/lib/jsgrid.min.css" type="text/css" />
+    <link rel="stylesheet" href="/audio/@Model.AppRoute/content/lib/jsgrid-theme.min.css" type="text/css" />
+
+    <!-- Dynabic.Menu CSS -->
+    <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
+    <link href="https://cms.admin.containerize.com/templates/aspose/css/AsposePtyLtdMenu.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cms.admin.containerize.com/templates/aspose/css/font-awesome.css" type="text/css" />
+
+    <script src="/audio/@Model.AppRoute/content/lib/jquery-1.11.0.min.js"></script>
+    <script src="https://products.aspose.app/js/bootstrap.min.js"></script>
+    <script src="/audio/@Model.AppRoute/content/lib/jsgrid.min.js"></script>
+
+    <link rel="stylesheet" href="~/audio/@Model.AppRoute/content/css/asposeapp.css?v2.1" type="text/css" />
+    <link rel="stylesheet" href="~/audio/@Model.AppRoute/content/css/diagram.css" type="text/css" />
+    <link rel="stylesheet" href="~/audio/@Model.AppRoute/content/css/audio.css?v2.1" type="text/css" />
+
+    <script src="~/audio/@Model.AppRoute/content/scripts/base.js?v2.1"></script>
+
+
+    <link href="~/audio/@Model.AppRoute/content/lib/select2.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/audio/@Model.AppRoute/content/lib/select2.full.min.js"></script>
+
+    @if (ViewBag.JsonLd != null)
+    {
+        foreach (string item in ViewBag.JsonLd as List<string>)
+        {
+            <script type="application/ld+json">
+                @Html.Raw(item)
+            </script>
+        }
+    }
+
+
+    @if (Model.IsProduction)
+    {
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3109235-5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-3109235-5');
+        </script>
+    }
+    @* For Aspose.Diagram testing purpose *@
+    @if (!Model.IsProduction)
+    {
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148901772-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-148901772-1');
+        </script>
+    }
+</head>
+<body>
+    <div id='DynabicMenuInnerDiv'></div>
+
+    @RenderBody()
+
+    <div id='DynabicMenuFooter'></div>
+
+    <script>
+        LoadMenu("AsposeApp");
+    </script>
+
+    @if (IsSectionDefined("scripts"))
+    {
+        @RenderSection("scripts", false)
+    }
+</body>
+</html>

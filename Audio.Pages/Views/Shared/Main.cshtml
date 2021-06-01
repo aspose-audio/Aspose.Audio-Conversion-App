@@ -1,0 +1,297 @@
+﻿@using AudioVedio.Pages.Models
+@model AudioVedio.Pages.Models.AppModel
+
+<div class="container-fluid asposetools pb5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pt-5 pb-5" style="min-height:450px">
+
+                <h1 id="ProductTitle">@Model.Title</h1>
+                <h2 id="ProductTitleSub">@Model.TitleSub</h2>
+
+                <div id="WorkPlaceHolder">
+
+                    <div id="rawTableDiv" class="col-md-12 pt-5">
+                        <table id="rawFileTable" class="raw-table"></table>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="choosefile btn-group dropup pt-5">
+                            <div id="fileDiv">
+                                <input id="file1" type="file" style="display: none;" accept="*"
+                                       onchange="fileSelected()">
+                            </div>
+                            <button type="button" class="btn btn-success btn-lg" onclick="clickUpLoad()"><span class="glyphicon glyphicon-plus pl-2"></span>Choose File</button>
+                            <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" id="uploadMenu1">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu3" role="menu" aria-labelledby="uploadMenu1">
+                                <li><a href="#" onclick="clickUpLoad()">From Computer</a></li>
+                                <li><a href="#" onclick="openAddFileDialogModel()">By Url</a></li>
+                            </ul>
+                        </div>
+                        <div class="convertbtn hidden" id="uploadDiv">
+                            <input type="button" class="btn btn-success btn-lg" ID="uploadButton" onclick="clickConvert()" value="@Model.ResourcesFromApp("ButtonText")" />
+                        </div>
+                    </div>
+                    <div class="terms-area"><span>*By uploading your files or using our service you agree with our </span><a href="https://about.aspose.app/legal/tos" target="_blank">Terms of Service</a><span> and </span><a href="https://about.aspose.app/legal/privacy-policy" target="_blank">Privacy Policy</a><span>.</span></div>
+
+                    @if (false)
+                    {
+                        <div class="col-md-12">
+                            @if (Model.SaveAsOptions != null)
+                            {
+                                <div class="saveas">
+                                    <em>@Model.Resources["SaveAs"]</em>
+                                    <div class="btn-group">
+                                        <select id="saveAs" name="saveAs" style="display: none" onchange="">
+                                            @foreach (var ext in Model.SaveAsOptions)
+                                            {
+                                                <option value="@ext.ToUpper().Trim()">@ext.ToUpper().Trim()</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            }
+                            <div class="convertbtn">
+                                <input type="button" class="btn btn-success btn-lg" ID="uploadButton" value="@Model.ResourcesFromApp("ButtonText")" />
+                            </div>
+                        </div>
+                    }
+                    @*</form>*@
+                </div>
+                @if (!Model.UploadAndRedirect)
+                {
+                    <div id="DownloadPlaceHolder" class="hidden">
+                        <div class="filesuccess">
+                            <label id="SuccessMessage">@Model.ResourcesFromApp("SuccessMessage")</label>
+                            <span class="convertbtn">
+                                <a href="#" id="DownloadButton" class="btn btn-success btn-lg">@Model.Resources["DownLoadNow"]&nbsp;<i class="fa fa-download"></i></a>
+                            </span>
+                            @if (Model.ShowViewerButton)
+                            {
+                                <div class="clearfix">&nbsp;</div>
+                                <span class="viewerbtn">
+                                    <a href="#" id="ViewerLink" target="_self" class="btn btn-success btn-lg">@Model.ResourcesFromApp("ViewerButtonText") &nbsp;<i class="fa fa-eye"></i></a>
+                                </span>
+                            }
+                            <div class="clearfix">&nbsp;</div>
+                            <div class="col-md-2"></div>
+                            <a href="@Model.AppURL.ToLower()" class="btn btn-link col-md-6" style="text-align: left">@Model.ResourcesFromApp("AnotherFile") &nbsp;<i class="fa-refresh fa"></i></a>
+                            <a id="sendEmailButton" class="btn btn-link col-md-3" style="text-align: left">@Model.Resources["SendToEmail"] &nbsp;<i class="fa-envelope-o fa"></i></a>
+                            <div class="col-md-1"></div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-2"></div>
+                            <a class="btn btn-link col-md-6" style="text-align: left" target="_blank" href="https://products.aspose.cloud/audio/family">Cloud API &nbsp;<i class="fa-cloud fa"></i></a>
+                            <a class="btn btn-link col-md-3" style="text-align: left" target="_blank" href="https://products.aspose.com/audio/family">On Premise API &nbsp;<i class="fa-file-o fa"></i></a>
+                            <div class="col-md-1"></div>
+
+                        </div>
+                        <p>@Model.Resources["BookmarkTextDownload"]</p>
+                    </div>
+                }
+                <div id="alertPlaceHolder" class="col-md-12">
+                    <br />
+                    <p id="alertMessage" class="alert alert-danger hidden"></p>
+                    <p id="alertSuccess" class="alert alert-success hidden"></p>
+                </div>
+
+                <div id="loaderPlaceHolder">
+                    <div id="loader" class="hidden" role="status" aria-hidden="true">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 15%">15%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Audio setting（Modal） -->
+<div class="modal fade" id="audioSetting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-video">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Options
+                </h4>
+            </div>
+            <div class="modal-body modal-body-title modal-title-color">
+                Audio
+            </div>
+            <div class="modal-choose">
+                <span>Audio Codec</span>
+                <div class="modal-choose2">
+                    <select id="audioCodecSelect">
+                        <option>copy</option>
+                        <option>flac</option>
+                    </select>
+                    <span>
+                        Codec to encode the audio. Use "Copy" to copy the stream without re-encoding.
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-choose">
+                <span>Volume</span>
+                <div class="modal-choose2">
+                    <select id="volumeSelect">
+                        <option value="-120">-120dB</option>
+                        <option value="-110">-110dB</option>
+                        <option value="-100">-100dB</option>
+                        <option value="-90">-90dB</option>
+                        <option value="-80">-80dB</option>
+                        <option value="-70">-70dB</option>
+                        <option value="-60">-60dB</option>
+                        <option value="-50">-50dB</option>
+                        <option value="-40">-40dB</option>
+                        <option value="-30">-30dB</option>
+                        <option value="-20">-20dB</option>
+                        <option value="-10">-10dB</option>
+                        <option value="0" selected="selected">no change</option>
+                        <option value="10">+10dB</option>
+                        <option value="20">+20dB</option>
+                        <option value="30">+30dB</option>
+                        <option value="40">+40dB</option>
+                        <option value="50">+50dB</option>
+                        <option value="60">+60dB</option>
+                        <option value="70">+70dB</option>
+                        <option value="80">+80dB</option>
+                        <option value="90">+90dB</option>
+                        <option value="100">+100dB</option>
+                        <option value="110">+110dB</option>
+                        <option value="120">+120dB</option>
+                    </select>
+                    <span>Make audio louder or quiter.</span>
+                </div>
+            </div>
+
+            <div class="split"></div>
+
+            <div class="modal-choose hidden" id="VBRSelectDiv">
+                <span>VBR</span>
+                <div class="modal-choose2">
+                    <select id="vbrSelect" onchange="VBRSelectChange()">
+                        <option value="0">220-260kbps</option>
+                        <option value="1">190-250kbps</option>
+                        <option value="2">170-210kbps</option>
+                        <option value="3">150-195kbps</option>
+                        <option value="4">140-185kbps</option>
+                        <option value="5">120-150kbps</option>
+                        <option value="6">100-130kbps</option>
+                        <option value="7">80-120kbps</option>
+                        <option value="8">70-105kbps</option>
+                        <option value="9">45-85kbps</option>
+                        <option value="-1" selected="selected">Constant Bitrate(CBR)</option>
+                    </select>
+                    <span>Variable Bitrate or Constant Bitrate encoding</span>
+                </div>
+            </div>
+
+            <div class="modal-choose" id="bitrateDiv">
+                <span>Audio Bitrate</span>
+                <div class="modal-choose2">
+                    <input id="bitrateInput" type="text" name="" placeholder="128">
+                    <span>
+                        Audio bitrate.
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-body modal-body-title modal-title-color">
+                Trim
+            </div>
+            <div class="modal-choose">
+                <span>Trim Start</span>
+                <div class="modal-choose2">
+                    <input id="startTime" type="text" name="">
+                    <span>
+                        Trim start timestamp (HH:MM:SS)
+                    </span>
+                </div>
+            </div>
+            <div class="modal-choose">
+                <span>Trim End</span>
+                <div class="modal-choose2">
+                    <input id="endTime" type="text" name="">
+                    <span>
+                        Trim end timestamp (HH:MM:SS)
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">close
+                </button> -->
+                <button type="button" class="btn btn-primary" onclick="saveAudioSetting()">
+                    OK
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="addFileDialog" tabindex="-1" role="dialog" aria-labelledby="addFileDialogLabel" aria-hidden="true">
+    <div class="modal-dialog model-addfile">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title addfile-title" id="addFileDialogLabel">
+                    Add file by URL
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="addfile-main">
+                    <span><img src="/audio/@Model.AppRoute/content/images/url.png" alt="" /></span>
+                    <input type="text" id="addfileUrl" placeholder="https://..." />
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="addfile-btn" onclick="urlInputed()">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("Social")
+@Html.Partial("Overview", Model.OverviewModel)
+@if (Model.ExtensionModel != null)
+{
+    @Html.Partial("ExtensionInfo", Model.ExtensionModel)
+}
+@if (Model.HowToModel != null)
+{
+    @Html.Partial("HowTo", Model.HowToModel)
+}
+@if (Model.CanonicalModel != null)
+{
+    @Html.Partial("Canonical", Model.CanonicalModel)
+}
+
+@if (Model.OtherFeaturesModel != null)
+{
+    @Html.Partial("OtherFeatures", Model.OtherFeaturesModel)
+}
+
+@Html.Partial("Modals")
+
+@if (Model.SaveAsOptions != null)
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#saveAs').select2();
+            var val = $('#saveAs option:eq(0)').val();
+            $('#saveAs').val(val);
+            $('#saveAs').change();
+        });
+    </script>
+}
